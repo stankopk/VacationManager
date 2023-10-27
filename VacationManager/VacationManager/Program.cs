@@ -1,7 +1,14 @@
+using FirebaseAdmin;
+using Google.Apis.Auth.OAuth2;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+FirebaseApp.Create(new AppOptions()
+{
+    Credential = GoogleCredential.FromFile("C:\\Users\\PC11-204\\Source\\Repos\\VacationManager\\VacationManager\\VacationManager\\vacationmanager-firebase-admin.json")
+});
 
 var app = builder.Build();
 
